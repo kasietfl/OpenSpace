@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #000;
+    -webkit-background-size: 100%;
+    overflow: hidden;
+}
+
+.space {
+    width: 1000px;
+    margin: auto;
+    background-image: url("assets/space.png");
+    height: 100%;
+    display: flex;
+}
+
+.planet-area {
+    width: 500px;
+    overflow: hidden;
+}
+
+.planet {
+    width: 490px;
+    position: relative;
+    left: -2px;
+    bottom: -15px;
+}
+
+.rocket {
+    width: 180px;
+    position: relative;
+    left: 260px;
+    bottom: -280px;
+    transform: rotate(25deg);
+}
+
+.control-panel {
+    background: repeating-linear-gradient(45deg, #2A3283FF, #2A3283FF 10px, #2a3283 20px, #9198e5 25px);
+    margin: auto;
+    width: 400px;
+    height: 280px;
+}
+
+.control-panel__inner {
+    margin: 15px;
+    background-color: #2a1758;
+    height: 250px;
+}
+
+#launchBtn {
+    border-radius: 30px;
+    width: 110px;
+    height: 32px;
+    background-color: #a70a0e;
+    color: #fff;
+    margin-top: 15px;
+    margin-left: 125px;
+}
+
+#okBtn {
+    border-radius: 10px;
+    background-color: yellow;
+    width: 50px;
+    height: 25px;
+}
+
+input[type="password"] {
+    height: 23px;
+    color: yellow;
+    background-color: black;
+    border-radius: 10px;
+    border: 1px solid yellow;
+    margin-top: 15px;
+    margin-left: 66px;
+}
+
+.check-buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+}
+
+input[type="checkbox"]{
+    width: 25px;
+    margin-left: 20px;
+}
+input[type="checkbox"]:first-child{
+    margin-left: 45px;
+}
+.levers {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+}
+
+input[type="range"] {
+    -webkit-appearance: slider-vertical;
+    height: 80px;
+    margin-right: -76px;
+}
+input[type="button"]{
+    cursor: pointer;
+}

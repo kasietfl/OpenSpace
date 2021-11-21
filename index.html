@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open Space</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        window.onload = function () {
+            let password = document.querySelector("input");
+            let inputs = document.getElementsByTagName("input");
+            let okBtn = document.getElementById("okBtn");
+            let launchBtn = document.getElementById("launchBtn");
+            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            let controlPanel = document.querySelector(".control-panel__inner");
+            let levers = document.querySelectorAll('input[type="range"]');
+
+            okBtn.addEventListener('click', function () {
+                if (password.value == "TrustNo1") {
+                    for (let i = 0; i < inputs.length - 1; i++) {
+                        inputs[i].disabled = false;
+                    }
+                    password.disabled = true;
+                    okBtn.disabled = true;
+                }
+            })
+
+            controlPanel.onchange = function () {
+                let checkCount = 0;
+                for (let i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i].checked) {
+                        checkCount++;
+                    }
+                }
+                let leverCount = 0;
+                for (let i = 0; i < levers.length; i++) {
+                    if (levers[i].value == 100) {
+                        leverCount++;
+                    }
+                }
+                if (checkCount == checkboxes.length && leverCount == levers.length) {
+                    launchBtn.disabled = false;
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div class="space">
+    <div class="planet-area">
+        <img class="rocket" src="assets/rocket.png" alt="rocket">
+        <img class="planet" src="assets/mars.png" alt="planet">
+    </div>
+    <div class="control-panel">
+        <div class="control-panel__inner">
+            <input type="password" value="TrustNo1">
+            <input type="button" value="OK" id="okBtn">
+            <div class="check-buttons">
+                <input type="checkbox" disabled>
+                <input type="checkbox" disabled>
+                <input type="checkbox" disabled>
+                <input type="checkbox" disabled>
+                <input type="checkbox" disabled>
+                <input type="checkbox" disabled>
+            </div>
+            <div class="levers">
+                <input type="range" disabled>
+                <input type="range" disabled>
+                <input type="range" disabled>
+                <input type="range" disabled>
+                <input type="range" disabled>
+            </div>
+            <input type="button" value="Launch" id="launchBtn" disabled>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
